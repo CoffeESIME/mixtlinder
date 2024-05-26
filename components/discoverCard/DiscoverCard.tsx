@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   cardInner: {
     color: 'black',
     backgroundColor: 'transparent',
-  
     padding: 10
   },
   bio: { fontSize: 18, color: "white" },

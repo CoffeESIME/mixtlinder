@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 
-export default function DiscoverLauyout() {
+export default function LoginLauyout() {
   return (
     <Tabs
       screenOptions={{
@@ -12,8 +12,6 @@ export default function DiscoverLauyout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Discover",
-          
         }}
       />
     </Tabs>
