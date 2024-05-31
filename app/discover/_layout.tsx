@@ -1,21 +1,21 @@
-import { Tabs } from "expo-router";
+import { Stack, Tabs } from "expo-router";
 
 export default function DiscoverLauyout() {
   return (
-    <Tabs
+    <Stack
       screenOptions={{
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: false,
       }}
     >
-      <Tabs.Screen
+      <Stack.Screen
         name="index"
         options={{
           title: "Discover",
-          
+          headerShown:false
         }}
       />
-    </Tabs>
+    </Stack>
   );
 }
