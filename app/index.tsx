@@ -14,7 +14,7 @@ export default function LandingPage() {
         <Link href="/discover" asChild>
           <ConnectButton onPress={()=>{}} ></ConnectButton>
         </Link>
-        <Link href="/discover" asChild>
+        <Link href="/nextroutes" asChild>
           <FindYourTrailButton />
         </Link>
       </View>
