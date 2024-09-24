@@ -4,8 +4,6 @@ export default function DiscoverLauyout() {
   return (
     <Stack
       screenOptions={{
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: false,
       }}
     >
@@ -13,7 +11,7 @@ export default function DiscoverLauyout() {
         name="index"
         options={{
           title: "Discover",
-          headerShown:false
+          headerShown:true
         }}
       />
     </Stack>

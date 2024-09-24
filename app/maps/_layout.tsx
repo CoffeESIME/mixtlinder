@@ -1,6 +1,6 @@
 import { Stack, Tabs } from "expo-router";
 
-export default function DiscoverLayout() {
+export default function MapasLayout() {
   return (
     <Stack
       screenOptions={{
@@ -10,8 +10,8 @@ export default function DiscoverLayout() {
       <Stack.Screen
         name="index"
         options={{
-          title: "Rutas",
-          headerShown:true
+          title: "Mapas",
+          headerShown: true
         }}
       />
     </Stack>

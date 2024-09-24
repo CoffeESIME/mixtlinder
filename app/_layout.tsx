@@ -5,7 +5,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack, StackNavigator } from "expo-router";
+import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
@@ -62,6 +62,7 @@ function RootLayoutNav() {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          headerShown: false
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />

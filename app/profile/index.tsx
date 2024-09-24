@@ -2,11 +2,10 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import CatClaw from "@/components/Claw/Claw"; // Asegúrate de que la ruta sea correcta
+import { Stack } from "expo-router";
 
-// Datos ficticios para el nivel del usuario
 const userLevelClaws = [1, 2, 3, 4, 5];
 
-// Datos ficticios para las rutas del usuario
 const userRoutes = [
   {
     id: "1",
@@ -31,7 +30,6 @@ const userRoutes = [
   },
 ];
 
-// Datos ficticios para las próximas rutas desbloqueadas
 const nextRoutes = [
   {
     id: "4",
@@ -52,14 +50,12 @@ const nextRoutes = [
 export default function Profile() {
   return (
     <View style={styles.container}>
-      {/* Garras Principales del Usuario */}
+
       <CatClaw image="" />
 
-      {/* Bienvenida */}
       <Text style={styles.welcomeText}>Bienvenido</Text>
       <Text style={styles.levelText}>Tu Nivel Mixtli</Text>
 
-      {/* Garras de Nivel del Usuario */}
       <Text style={styles.sectionTitle}>Tus Garras de Nivel</Text>
       <View style={styles.levelClawsContainer}>
         {userLevelClaws.map((claw) => (
@@ -67,7 +63,6 @@ export default function Profile() {
         ))}
       </View>
 
-      {/* Tabla de Rutas del Usuario */}
       <Text style={styles.sectionTitle}>Tus Rutas</Text>
       <View style={styles.tableHeader}>
         <Text style={styles.tableHeaderText}>Nivel</Text>
@@ -88,7 +83,6 @@ export default function Profile() {
         )}
       />
 
-      {/* Próximas Rutas Desbloqueadas */}
       <Text style={styles.sectionTitle}>Próximas Rutas</Text>
       <FlatList
         data={nextRoutes}

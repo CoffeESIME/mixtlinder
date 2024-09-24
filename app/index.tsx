@@ -1,40 +1,44 @@
+// components/LandingPage.js
 import React from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  ScrollView,
+} from "react-native";
 import { Link } from "expo-router";
-import FindYourTrailButton from "@/components/ui/buttons/FindYourTrail";
-import ConnectButton from "@/components/ui/buttons/Connect";
-import backgroundImage from "@/assets/images/mixtlinder.webp";
+import backgroundImage from "../assets/images/mixtlinder.webp";
 import Button from "@/components/ui/buttons/Button";
 
-// Reemplaza esto con la URL de tu imagen
+const buttonData = [
+  { text: "Conecta", href: "/discover" },
+  { text: "Encuentra tu próxima ruta", href: "/nextroutes" },
+  { text: "Ver Perfil", href: "/profile" },
+  { text: "Ver Mapas", href: "/maps" },
+  { text: "Conoce tus guías", href: "/about" },
+];
 
 export default function LandingPage() {
   return (
-    <ImageBackground source={backgroundImage} style={styles.background}>
-      <View style={styles.container}>
-        <Text style={styles.text}>Bienvenido Mixtli!</Text>
-        <Link href="/discover" asChild>
-          <Button
-            text="Conecta"
-            color="#ff6347" // Cambia el color del botón
-            onPress={() => {}} // Acción al presionar el botón
-          />
-        </Link>
-        <Link href="/nextroutes" asChild>
-          <Button
-            text="Encuentra tu proxima ruta"
-            color="#ff6347" // Cambia el color del botón
-            onPress={() => {}} // Acción al presionar el botón
-          />
-        </Link>
-        <Link href="/profile" asChild>
-          <Button
-            text="Ver Perfil"
-            color="#ff6347" // Cambia el color del botón
-            onPress={() => {}} // Acción al presionar el botón
-          />
-        </Link>
-      </View>
+    <ImageBackground
+      source={backgroundImage}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay} />
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.text}>¡Bienvenido a Mixtli!</Text>
+        {buttonData.map((button, index) => (
+          <Link key={index} href={button.href} asChild>
+            <Button
+              text={button.text}
+              color="#ff6347" // Cambia el color del botón si es necesario
+              accessibilityLabel={`Botón para ${button.text}`}
+            />
+          </Link>
+        ))}
+      </ScrollView>
     </ImageBackground>
   );
 }
@@ -42,23 +46,34 @@ export default function LandingPage() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    width: "100%", // Asegura que el fondo ocupe todo el ancho
-    height: "100%", // Asegura que el fondo ocupe toda la altura
+    width: "100%",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
-    opacity: 0.9,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
+    width: "100%",
+    height: "100%",
+    flex: 1,
   },
   container: {
-    backgroundColor: "rgba(255, 255, 255, 0.8)", // Opcional para mejorar la visibilidad de los textos y botones
-    borderRadius: 10,
-    padding: 20,
+  
+    backgroundColor: "rgba(255, 255, 255, 0.85)",
+    borderRadius: 15,
+    padding: 30,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    height: "60%",
+    marginVertical: "auto",
   },
   text: {
-    fontSize: 20,
-    marginBottom: 20,
-    textAlign: "center", // Asegura que el texto esté centrado
-    zIndex: 10,
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 30,
+    textAlign: "center",
+    color: "#333",
   },
 });

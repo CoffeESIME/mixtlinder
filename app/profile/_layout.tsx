@@ -4,16 +4,14 @@ export default function ProfileLayout() {
   return (
     <Stack
       screenOptions={{
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: false,
       }}
     >
       <Stack.Screen
         name="index"
         options={{
-          title: "Rutas",
-          headerShown:false
+          title: "Perfil",
+          headerShown:true
         }}
       />
     </Stack>
